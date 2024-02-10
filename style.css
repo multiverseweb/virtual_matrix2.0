@@ -97,8 +97,8 @@ header{
     font-weight:550;
 }
 .man{
-    bottom: -70px;
-    right: -90px;
+    bottom: 0px;
+    right: 0px;
     height: 700px;
     position:fixed;
 }
