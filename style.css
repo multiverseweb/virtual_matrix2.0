@@ -75,9 +75,15 @@ header{
     margin-top: -7px;
     transition-duration: 0.2s;
     filter: brightness(0) invert(0.7) saturate(1) hue-rotate(0deg);
+    display: none;
+    z-index: 1000;
 }
 .stack:hover{
     filter: brightness(1) invert(0) saturate(10) hue-rotate(80deg);
+}
+#close{
+    filter: brightness(1) invert(0) saturate(10) hue-rotate(80deg);
+    display: none;
 }
 .ball{
     position: absolute;
@@ -228,4 +234,144 @@ header{
     margin-top: 50%;
     transform: translate(-50%,-50%);
     filter:invert(1);
+}
+
+@media (max-width:900px){
+    body{
+        overflow-x: hidden;
+    }
+    .container{
+        height: 100vh;
+        width: 100vw;
+        background-size: cover;
+        animation-name: pan;
+        animation-duration: 150s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    @keyframes pan{
+        0%{
+            background-position: 50%;
+        }
+        25%{
+            background-position: 100%;
+        }
+        50%{
+            background-position: 50%;
+        }
+        75%{
+            background-position: 25%;
+        }
+        100%{
+            background-position: 50%;
+        }
+    }
+    header{
+        position: fixed;
+        width: 100vw;
+        height: 10vh;
+        background-color: #d2000000;
+        backdrop-filter: blur(7px);
+        z-index: 10;
+    }
+    .logo{
+        height: 45px;
+        margin-top: 20px;
+        margin-left: 20px;
+        z-index: 1000;
+    }
+    #logo2{
+        width: 40px;
+    }
+    
+    .navbar{
+        display: none;
+        flex-direction: column;
+        width: 100vw;
+        position: absolute;
+        padding-top: 40px;
+        height: 100vh;
+        text-align: center;
+        justify-content: flex-start;
+        background-color: #000000;
+        backdrop-filter: blur(7px);
+        z-index: 100;
+    }
+    .navbar li{
+        width: 100vw;
+        margin-left: 50%;
+        transform: translate(-50%);
+        padding:35px 0px 35px 0px;
+    }
+    .navbar li a{
+        border-radius: 10px;
+        transition-duration: 0.2s;
+        background-image: radial-gradient(#602ea600,#602ea600,#602ea600,#602ea600);
+        border: 1px solid #cc75db00;
+    }
+    .navbar li a:hover{
+        background-image: radial-gradient(#602ea600,#602ea600,#cc75db2b,#cc75db);
+        border: 1px solid #cc75db;
+    }
+    .stack{
+        display: block;
+        height: 30px;
+        width: 33px;
+        position: absolute;
+        right:30px;
+        margin-top: 25px;
+        transition-duration: 0.2s;
+        filter: brightness(0) invert(0.7) saturate(1) hue-rotate(0deg);
+    }
+    .ball{
+        position: absolute;
+        top:2vh;
+        left:50vw;
+        transform: scale(0.6);
+        width: 60vw;
+        object-fit: contain;
+    }
+    .main{
+        width: 70vw;
+        word-wrap: break-word;
+        position: absolute;
+        top:15vh;
+        left:20px;
+    }
+    .man{
+        display: none;
+    }
+    .heading{
+        font-size: 3rem;
+    }
+    .small{
+        font-size: 1.3rem;
+        margin-left: 0rem;
+    }
+    .register{
+        padding:10px 20px 10px 20px;
+        margin-top: 50px;
+        font-weight: 540;
+        font-size: 1rem;
+    }
+    .blank{
+        top:80vh;
+    }
+    .old{
+        margin-top: 70px;
+        width: 80vw;
+    }
+    .event{
+        width: 80vw;
+    }
+    .info{
+        font-size: 0.7rem;
+    }
+    
+    .r{
+        left:109%;
+    }
+    .gradient{
+        left:110%;
+        }
 }
